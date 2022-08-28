@@ -61,7 +61,7 @@ fig.add_trace(go.Scatter(x=data["Datetime"],y=data["Price1h"],name="Price1h"), s
 fig.add_trace(go.Scatter(x=data["Datetime"],y=data["Value"],name="Power"), secondary_y=True,)
 fig.update_layout(hovermode="x unified")
 fig.update_layout(
-    title="FCR Interactive Graph",
+ #   title="FCR Interactive Graph",
  #   xaxis_title="Time (h)",
  #   yaxis_title="FCR Price [€/MW per h]",
     legend=dict(
