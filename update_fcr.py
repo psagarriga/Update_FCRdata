@@ -29,7 +29,7 @@ print(data.info())
 data['Datetime'] = pd.to_datetime(data['Date'] + " " + data['Time'])    #dtype: datetime64[ns]
 
 data["Unnamed: 5"] = data["Price"] * 2
-data.rename({'Price': 'Price0,5h', 'Unnamed: 5': 'Price1h'}, axis=1, inplace=True)
+data.rename({'Value': 'Demand', 'Price': 'Price0,5h', 'Unnamed: 5': 'Price1h'}, axis=1, inplace=True)
 data.drop(['Price0,5h', 'Direction'], axis=1, inplace=True)
 
 
@@ -58,7 +58,7 @@ fig = go.Figure()
 fig = make_subplots(specs=[[{"secondary_y": True}]])
 
 fig.add_trace(go.Scatter(x=data["Datetime"],y=data["Price1h"],name="Price1h"), secondary_y=False,)
-fig.add_trace(go.Scatter(x=data["Datetime"],y=data["Value"],name="Power"), secondary_y=True,)
+fig.add_trace(go.Scatter(x=data["Datetime"],y=data["Demand"],name="Demand"), secondary_y=True,)
 fig.update_layout(hovermode="x unified")
 fig.update_layout(
  #   title="FCR Interactive Graph",
