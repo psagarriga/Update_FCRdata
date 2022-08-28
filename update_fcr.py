@@ -77,7 +77,7 @@ fig.show()
  
 
 ######################### SAVE HTML Interactiv Graph for website #########################
-fig.write_html("_export/graph_FCR.html")
+fig.write_html("graph_FCR.html")
 
 ######################### Create table with summary of information #########################
 ######################### create dataframe with describe.          #########################
@@ -87,4 +87,4 @@ data.describe().columns
 dd = data.describe()
 
 ######################### Save table with summary of information #########################
-dd.to_html("_export/table_FCR.html")
+dd.to_html("table_FCR.html")
