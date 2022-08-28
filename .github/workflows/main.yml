@@ -39,7 +39,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run my own Python script written by me
         env:
-          MY_SECRET_TOKEN: §{{ secrets.MY_SECRET_TOKEN }}
+          MY_SECRET_TOKEN: §{{ secrets.MY_SECRET_TOKEN1 }}
         run: python update_fcr.py
 
 
@@ -58,7 +58,7 @@ jobs:
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.MY_SECRET_TOKEN }}
+          github_token: ${{ secrets.MY_SECRET_TOKEN1 }}
           branch: main 
           
           
