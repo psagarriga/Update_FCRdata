@@ -71,7 +71,7 @@ fig.update_layout(
     x=0.01))
 
 fig.update_yaxes(title_text="<b>Price</b> [€/MW per h]", secondary_y=False, range=[0,400])
-fig.update_yaxes(title_text="<b>Power</b> [MW]", secondary_y=True, range=[0,700])
+fig.update_yaxes(title_text="<b>Total demand</b> [MW]", secondary_y=True, range=[0,700])
 fig.show()
 
  
