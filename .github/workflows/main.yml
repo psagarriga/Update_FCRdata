@@ -40,7 +40,7 @@ jobs:
       - name: Run my own Python script written by me
         env:
           MY_SECRET_TOKEN: §{{ secrets.MY_SECRET_TOKEN }}
-        run: python Update_FCR.py
+        run: python update_fcr.py
 
 
       - name: commit files
