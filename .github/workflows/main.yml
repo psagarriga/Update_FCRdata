@@ -43,6 +43,9 @@ jobs:
         run: python update_fcr.py
 
 
+
+
+
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
@@ -55,5 +58,9 @@ jobs:
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          MY_SECRET_TOKEN: ${{ secrets.MY_SECRET_TOKEN }}
+          github_token: ${{ secrets.MY_SECRET_TOKEN }}
           branch: main 
+          
+          
+          
+          
