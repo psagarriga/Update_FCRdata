@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-import dataframe_image as dfi
+#import dataframe_image as dfi
 import jinja2
 from ._screenshot import Screenshot
 from plotly.subplots import make_subplots
