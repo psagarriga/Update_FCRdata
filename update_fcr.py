@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-#from pretty_html_table import build_table
+from pretty_html_table import build_table
 from plotly.subplots import make_subplots
 
 ######################### TOKEN #########################
