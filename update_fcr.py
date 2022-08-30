@@ -3,16 +3,67 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import numpy as np
+import df2img
+from df2img import df2img
 #from plotly.subplots import make_subplots
 #import matplotlib as mpl
 
+######################### TOKEN #########################
 df = pd.DataFrame([[38.0, 2.0, 18.0, 22.0, 21, np.nan],[19, 439, 6, 452, 226,232]],
                   index=pd.Index(['Tumour (Positive)', 'Non-Tumour (Negative)'], name='Actual Label:'),
                   columns=pd.MultiIndex.from_product([['Decision Tree', 'Regression', 'Random'],['Tumour', 'Non-Tumour']], names=['Model:', 'Predicted:']))
 print(df)
 print(df.style)
 
+######################### TEST df2img #########################
+ 
+  
+  
+  df = pd.DataFrame(
+        {
+            'Fruits': ['Apple', 'Apple', 'Apple', 'Orange', 'Banana', 'Orange'],
+            'BuyPrice': [1000, 3000, 2400, 3000, 800, 1500],
+            'SellPrice': [1200, 2800, 2500, 2500, 700, 1750]
+        }
+    )
+    
+    
+    # Display DataFrame
+    print('Original DataFrame:\n')
+    print(df)
+    
+    # Add Profit percentage column
+    df['Profit'] = (df['SellPrice']-df['BuyPrice'])*100/df['BuyPrice']
+    df['Profit'] = df.apply(lambda x: "{:,.2f} %".format(x['Profit']), axis=1)
+    
+    # Rename column titles
+    df = df.rename({'BuyPrice': 'Buy Price', 'SellPrice': 'Sell Price'}, axis=1)
+    
+    # Highlight positive and negative profits
+    def highlight_cols(s):
+        color = 'red' if type(s) != str and s < 0 else 'green'        
+        return 'color: %s' % color
+    
+    df.style.applymap(highlight_cols, subset=['Profit'])
 
+
+    print('\nFinal DataFrame:\n')
+    print(df)
+    
+    
+    # Now create an image file for the table
+    df2img(
+        df,
+        file="table_fruits.png",
+        header_color="white",
+        header_bgcolor="orange",
+        row_bgcolors=["lightgray", "white"],
+        font_size=10.0,
+        col_width=1.5,
+        row_height=0.3
+    )
+    
+    plt.show()
 
 ######################### TOKEN #########################
 token = os.environ.get("MY_SECRET_TOKEN")
