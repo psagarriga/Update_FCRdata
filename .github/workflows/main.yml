@@ -3,7 +3,7 @@
 name: Python script
 
 # Controls when the workflow will run
-on:
+#on:
 
 #  schedule:
 #    - cron: '0 0/2 * * *' # At minute 0 past every 2 hours
