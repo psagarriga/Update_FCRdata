@@ -51,7 +51,7 @@ def highlight_cols(s):
   print(df)
     
 # Now create an image file for the table
-    df2img(
+df2img(
         df,
         file="table_fruits.png",
         header_color="white",
