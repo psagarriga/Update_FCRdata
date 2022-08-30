@@ -19,7 +19,7 @@ print(df.style)
  
   
   
-  df = pd.DataFrame(
+df = pd.DataFrame(
         {
             'Fruits': ['Apple', 'Apple', 'Apple', 'Orange', 'Banana', 'Orange'],
             'BuyPrice': [1000, 3000, 2400, 3000, 800, 1500],
@@ -28,30 +28,29 @@ print(df.style)
     )
     
     
-    # Display DataFrame
-    print('Original DataFrame:\n')
-    print(df)
+# Display DataFrame
+print('Original DataFrame:\n')
+print(df)
     
-    # Add Profit percentage column
-    df['Profit'] = (df['SellPrice']-df['BuyPrice'])*100/df['BuyPrice']
-    df['Profit'] = df.apply(lambda x: "{:,.2f} %".format(x['Profit']), axis=1)
+# Add Profit percentage column
+df['Profit'] = (df['SellPrice']-df['BuyPrice'])*100/df['BuyPrice']
+df['Profit'] = df.apply(lambda x: "{:,.2f} %".format(x['Profit']), axis=1)
     
-    # Rename column titles
-    df = df.rename({'BuyPrice': 'Buy Price', 'SellPrice': 'Sell Price'}, axis=1)
+# Rename column titles
+df = df.rename({'BuyPrice': 'Buy Price', 'SellPrice': 'Sell Price'}, axis=1)
     
-    # Highlight positive and negative profits
-    def highlight_cols(s):
-        color = 'red' if type(s) != str and s < 0 else 'green'        
-        return 'color: %s' % color
+# Highlight positive and negative profits
+def highlight_cols(s):
+  color = 'red' if type(s) != str and s < 0 else 'green'        
+  return 'color: %s' % color
     
-    df.style.applymap(highlight_cols, subset=['Profit'])
+  df.style.applymap(highlight_cols, subset=['Profit'])
 
 
-    print('\nFinal DataFrame:\n')
-    print(df)
+  print('\nFinal DataFrame:\n')
+  print(df)
     
-    
-    # Now create an image file for the table
+# Now create an image file for the table
     df2img(
         df,
         file="table_fruits.png",
@@ -63,7 +62,7 @@ print(df.style)
         row_height=0.3
     )
     
-    plt.show()
+plt.show()
 
 ######################### TOKEN #########################
 token = os.environ.get("MY_SECRET_TOKEN")
