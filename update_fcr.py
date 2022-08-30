@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
-import dataframe_image as dfi
+from pretty_html_table import build_table
 from plotly.subplots import make_subplots
 
 ######################### TOKEN #########################
@@ -83,8 +83,7 @@ fig2.write_html("graph_FCR_price_90D.html")
 data1D.reset_index(inplace=True)
 data1Db = data1D[['Date', 'Time', 'Price1h']]
 
-data1Db_Style = data1Db.style.background_gradient(axis=0, gmap=data1Db['Price1h'], cmap='rainbow')
-dfi.export(data1Db_Style, "data1D.png")
+
   
     
   
