@@ -36,7 +36,6 @@ jobs:
           pip install dataframe_image
           pip install dataframe-image
           pip install df2img
-          pip install os
         # pip install -r requirements.txt
           
           
