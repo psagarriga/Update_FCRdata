@@ -32,7 +32,7 @@ jobs:
       
       - name: install python packages
         run: |
-          python -m pip install --upgrade pip pandas pip matplotlib pip plotly pip os
+          python -m pip install --upgrade pip pandas pip matplotlib pip plotly
           pip install dataframe_image
           pip install dataframe-image
           pip install df2img
