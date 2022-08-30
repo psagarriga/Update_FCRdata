@@ -1,5 +1,5 @@
-https://psagarriga.github.io/Update_FCRdata/graph_FCR.html
-https://psagarriga.github.io/Update_FCRdata/table_FCR.html
-https://psagarriga.github.io/Update_FCRdata/graph_FCR_price.html
+https://psagarriga.github.io/Update_FCRdata/graph_FCR_price_full.html
 https://psagarriga.github.io/Update_FCRdata/graph_FCR_price_90D.html
-https://psagarriga.github.io/Update_FCRdata/example.html
+https://psagarriga.github.io/Update_FCRdata/table_48h_data.html
+https://psagarriga.github.io/Update_FCRdata/table_7D_FCR_summary.html
+https://psagarriga.github.io/Update_FCRdata/table_90D_FCR_summary.html
