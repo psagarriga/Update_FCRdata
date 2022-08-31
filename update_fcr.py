@@ -119,6 +119,7 @@ dd90D = data90D.describe().applymap('{:,.2f}'.format)
 ######################### Create  Save 1D Data Table                  ########################
 ##############################################################################################
 
+data1D=data1D.sort_values(by=['Datetime_Index'], ascending=False) #Sorting values by column 
 data1D.reset_index(inplace=True)
 data1Db = data1D[['Date', 'Time', 'Price1h']]
 
