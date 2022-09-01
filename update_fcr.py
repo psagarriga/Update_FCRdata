@@ -38,7 +38,8 @@ data.drop(['Price', 'Unnamed: 5','Direction'], axis=1, inplace=True)
 data['Datetime_Index']=data['Datetime']
 data.set_index('Datetime_Index', inplace=True)
 
-
+# generate 30days moving average
+data['Price_30_ma']=data['Price1h'].rolling(30*24).mean()
 
 ##############################################################################################
 ########################  CREATE Short data Tables 1Day, 3Days & 90Days    ###################
@@ -84,6 +85,7 @@ fig1.write_html("graph_FCR_price_full.html")
 fig2 = go.Figure()
 
 fig2.add_trace(go.Scatter(x=data90D["Datetime"],y=data90D["Price1h"],name="Price1h"))
+fig2.add_trace(go.Scatter(x=data90D["Datetime"],y=data90D["Price_30_ma"],name="Price 30days Mooving Average")) #Add 30 day mooving average
 
 fig2.update_layout(hovermode="x unified")
 fig2.update_layout(
